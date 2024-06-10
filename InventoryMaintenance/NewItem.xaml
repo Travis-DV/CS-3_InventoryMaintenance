@@ -1,0 +1,98 @@
+﻿<Window x:Class="InventoryMaintenance.NewItem"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InventoryMaintenance"
+        mc:Ignorable="d"
+        Title="New Inventory Item" 
+        Height="250" 
+        Width="300">
+    <Grid FocusManager.FocusedElement="{Binding ElementName=itemNoTB}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.75*"/>
+            <ColumnDefinition Width="1.25*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Label 
+            x:Name="itemNoLabel" 
+            Grid.Row="0"
+            Grid.Column="0"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Content="Item no: " />
+        <TextBox 
+            x:Name="itemNoTB"
+            Grid.Row="0"
+            Grid.Column="1"
+            Margin="0,15,0,15"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            PreviewTextInput="NUMBERSONLY"
+            />
+        <Label 
+            x:Name="descriptionLabel" 
+            Grid.Row="1"
+            Grid.Column="0"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Content="Description: " />
+        <TextBox 
+            x:Name="descriptionTB"
+            Grid.Row="1"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Margin="0,15,15,15"
+            />
+        <Label 
+            x:Name="priceLabel" 
+            Grid.Row="2"
+            Grid.Column="0"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Content="Price: " />
+        <TextBox 
+            x:Name="priceTB"
+            Grid.Row="2"
+            Grid.Column="1"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Margin="0,15,0,15"
+            PreviewTextInput="DOUBLEONLY"
+            />
+        <Button 
+            x:Name="saveButton"
+            Margin="15,15,20,15" 
+            Grid.Row="4"
+            Grid.Column="1"
+            Background="LightBlue"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            FontSize="15"
+            FontWeight="Bold"
+            FontFamily="Georgia"
+            Content="Save Item"
+            Click="SaveItem"/>
+        <Button 
+            x:Name="cancelButton"
+            Margin="10,15,10,15" 
+            Grid.Row="4"
+            Grid.Column="2"
+            Background="LightPink"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            FontSize="15"
+            FontWeight="Bold"
+            FontFamily="Georgia"
+            Content="Cancel"
+            Click="CancelItem"/>
+    </Grid>
+</Window>
